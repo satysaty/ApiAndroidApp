@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+<table border="1" cellpadding="3">
+    <tr>
+        <td>
+            Id
+        </td>
+        <td>
+            Работа
+        </td>
+        <td>
+            Адрес
+        </td>
+        <td>
+            Телефон
+        </td>
+        <td>
+            Опции
+        </td>
+    </tr>
+    @foreach (var item in ViewBag.Repairs)
+    {
+    <tr>
+        <td>
+            @item.Id
+        </td>
+        <td>
+            @item.Work.Name
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Phone
+        </td>
+        <td>
+            @foreach (var option in item.Options)
+            {
+                @option.Id @option.Name
+                <br />
+            }
+        </td>
+    </tr>
+    }
+</table>
